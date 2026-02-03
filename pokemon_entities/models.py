@@ -10,7 +10,7 @@ class Pokemon(models.Model):
         "Название на японском", max_length=200, blank=True)
     title_en = models.CharField(
         "Название на английском", max_length=200, blank=True)
-    previous_evolution = models.ForeignKey("Pokemon", on_delete=models.SET_NULL, null=True,
+    previous_evolution = models.ForeignKey("self", on_delete=models.SET_NULL, null=True,
                                            blank=True, related_name='next_evolutions', verbose_name="Из кого эволюционировал")
 
     class Meta:
